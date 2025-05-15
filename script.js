@@ -1,7 +1,16 @@
-n = parseInt(prompt('Введите кол-во строк: '));
-m = parseInt(prompt('Введите кол-во столбцов: '));
-
 res = document.getElementById("result");
+
+n = parseInt(prompt('Введите кол-во строк: '));
+if (isNaN(n) || n <= 0) {
+  res.value = 'Кол-во строк должно быть натуральным числом!';
+  throw new Error;
+}
+m = parseInt(prompt('Введите кол-во столбцов: '));
+if (isNaN(m) || m <= 0) {
+  res.value = 'Кол-во столбцов должно быть натуральным числом!';
+  throw new Error;
+}
+
 var matrix = generateMatrix(n, m);
 displayMatrix(res);
 res.value += `\nНомер первого столбца матрицы, в котором есть хотя бы один отрицательный элемент: ${findColWithNeg(matrix) + 1}`;
