@@ -1,5 +1,7 @@
+n = parseInt(prompt('Введите кол-во строк: '));
+m = parseInt(prompt('Введите кол-во столбцов: '));
+
 res = document.getElementById("result");
-[n, m] = [5, 5];
 var matrix = generateMatrix(n, m);
 displayMatrix(res);
 res.value += `\nНомер первого столбца матрицы, в котором есть хотя бы один отрицательный элемент: ${findColWithNeg(matrix) + 1}`;
